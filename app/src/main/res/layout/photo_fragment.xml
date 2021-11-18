@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -11,12 +7,20 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/photo_textView"
+            android:id="@+id/photo_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_small"
-            android:hint="@string/file_name"
-            android:textSize="@dimen/gallery_card_textsize" />
+            style="@style/HeaderTextStyle"
+            android:text="@string/photo_header"/>
+
+        <TextView
+            android:id="@+id/photo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            style="@style/BaseTextStyle"
+            android:hint="@string/file_name"/>
 
         <ImageView
             android:id="@+id/photo_imageView"
@@ -32,6 +36,4 @@
             android:text="@string/delete_photo">
         </Button>
 
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

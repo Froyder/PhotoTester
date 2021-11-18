@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnItemReselectedListener {
             Toast.makeText(this, R.string.on_item_reselected, Toast.LENGTH_SHORT).show()
+            supportFragmentManager.popBackStack()
         }
     }
 }

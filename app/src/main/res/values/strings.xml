@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PhotoTester</string>
     <string name="take_picture">Take a picture</string>
-    <string name="use_camera">Camera</string>
+    <string name="use_camera">Camera mode</string>
     <string name="visit_gallery">Gallery</string>
     <string name="save_picture">Save this picture</string>
     <string name="file_name">File name</string>
@@ -15,8 +15,11 @@
     <string name="date_format">_dd-M-yyyy_hh:mm:ss</string>
     <string name="file_filter_suffix">.jpg</string>
     <string name="on_picture_saved_message">Picture has been saved to the gallery</string>
-    <string name="on_wrong_type_message">Oops... Wrong type of file!</string>
+    <string name="on_wrong_type_message">Oops… Wrong type of file!</string>
     <string name="on_item_reselected">You are here already!</string>
     <string name="timber_on_error_message">"Timber talks: Oops! We've got some "</string>
     <string name="timber_on_save_success">"Timber talks: new file saved successfully at  "</string>
+    <string name="camera_explanation">Here you can take pictures…\nand save it to your private gallery. \nLet\'s check it out!</string>
+    <string name="gallery_explanation">Here you can see all pictures that you\'ve saved.\nTap one to see it details.\nOr delete them all at once!</string>
+    <string name="photo_header">Picture details</string>
 </resources>

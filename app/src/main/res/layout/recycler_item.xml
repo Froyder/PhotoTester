@@ -16,10 +16,10 @@
         android:layout_margin="@dimen/margin_small"/>
 
     <TextView
-        android:id="@+id/photo_textView"
+        android:id="@+id/photo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/gallery_item_textsize"
+        style="@style/BaseTextStyle"
         android:hint="@string/file_name"
         android:layout_margin="@dimen/margin_small"
         android:adjustViewBounds="true"

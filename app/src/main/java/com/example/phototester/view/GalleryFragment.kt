@@ -67,6 +67,7 @@ class GalleryFragment : Fragment() {
         }
 
     private fun setAdapter(listOfFiles: Array<out File>) {
+        binding.deleteButton.isEnabled = listOfFiles.isNotEmpty()
         if (adapter == null) {
             binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
             binding.recyclerView.adapter = GalleryAdapter(onListClickListener, listOfFiles)

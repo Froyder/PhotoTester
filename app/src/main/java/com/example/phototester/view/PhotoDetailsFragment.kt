@@ -40,7 +40,7 @@ class PhotoDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.photoImageView.setImageURI(Uri.parse(picturePath))
-        binding.photoTextView.text = pictureName
+        binding.photoName.text = pictureName
 
         viewModel.mutableLiveData.observe(viewLifecycleOwner) { renderData(it) }
 

@@ -21,7 +21,7 @@ class GalleryAdapter(
 
         init {
             photoImage = itemView.findViewById(R.id.photo_imageView)
-            photoName = itemView.findViewById(R.id.photo_textView)
+            photoName = itemView.findViewById(R.id.photo_name)
         }
     }
 

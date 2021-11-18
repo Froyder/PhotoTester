@@ -8,6 +8,26 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/camera_mode_header"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/HeaderTextStyle"
+        android:text="@string/use_camera">
+    </TextView>
+
+    <TextView
+        android:id="@+id/camera_mode_explanation"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        style="@style/BaseTextStyle"
+        android:textSize="@dimen/normal_text_size"
+        android:text="@string/camera_explanation">
+    </TextView>
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/main_imageview"
         android:layout_width="match_parent"
