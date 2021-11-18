@@ -2,6 +2,7 @@ package com.example.phototester.dataprovider
 
 import android.content.Context
 import android.graphics.Bitmap
+import com.example.phototester.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +14,7 @@ import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FileManager(context: Context) : FileManagerInterface {
+class FileManager(private val context: Context) : FileManagerInterface {
 
     private lateinit var stream: OutputStream
     private val path: String = context.filesDir?.absolutePath.toString()
@@ -27,10 +28,12 @@ class FileManager(context: Context) : FileManagerInterface {
     override fun convertAndSaveImageAsync(image: Bitmap): Deferred<File> =
         coroutinesScope.async {
 
-            val sdf = SimpleDateFormat("_dd-M-yyyy_hh:mm:ss", Locale.getDefault())
+            val sdf = SimpleDateFormat(context.getString(R.string.date_format), Locale.getDefault())
             val pictureDate = sdf.format(Date())
 
-            val newImage = File(path, "PhotoTester$pictureDate.jpg")
+            val pictureName = setImageName(pictureDate)
+
+            val newImage = File(path, pictureName)
             kotlin.runCatching {
                 stream = FileOutputStream(newImage)
                 image.compress(Bitmap.CompressFormat.JPEG, 100, stream)
@@ -42,7 +45,7 @@ class FileManager(context: Context) : FileManagerInterface {
     override fun filterImageFiles(): Array<out File>? {
         val appDir = File(path)
         val filteredList = appDir.listFiles { file ->
-            file.path.endsWith(".jpg")
+            file.path.endsWith(context.getString(R.string.file_filter_suffix))
         }
         return filteredList
     }
@@ -54,5 +57,14 @@ class FileManager(context: Context) : FileManagerInterface {
             file.delete()
         }
         return File(path).listFiles()
+    }
+
+    override fun deleteImageFile(name: String) {
+        val file = File(path, name)
+        file.delete()
+    }
+
+    override fun setImageName(pictureDate: String): String {
+        return context.getString(R.string.app_name) + pictureDate + context.getString(R.string.file_filter_suffix)
     }
 }

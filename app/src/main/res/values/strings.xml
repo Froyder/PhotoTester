@@ -4,5 +4,15 @@
     <string name="visit_gallery">Visit gallery</string>
     <string name="save_picture">Save this picture</string>
     <string name="file_name">File name</string>
-    <string name="delete_all">Delete all photos</string>
+    <string name="delete_all">Delete all pictures</string>
+    <string name="delete_photo">Delete this picture</string>
+    <string name="warning">Warning!</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="delete_picture">Do you really want to delete this picture?</string>
+    <string name="delete_all_pictures">Do you really want to delete all pictures?</string>
+    <string name="date_format">_dd-M-yyyy_hh:mm:ss</string>
+    <string name="file_filter_suffix">.jpg</string>
+    <string name="on_picture_saved_message">Picture has been saved to the gallery</string>
+    <string name="on_wrong_type_message">Oops... Wrong type of file!</string>
 </resources>

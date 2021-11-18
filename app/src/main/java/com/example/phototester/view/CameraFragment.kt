@@ -28,10 +28,7 @@ class CameraFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val koinScope: Scope by lazy {
-        getKoin().getOrCreateScope(
-            "listScope",
-            named(CAMERA_SCOPE)
-        )
+        getKoin().getOrCreateScope(CAMERA_SCOPE_ID, named(CAMERA_SCOPE))
     }
     private val viewModel: CameraViewModel by koinScope.inject()
 
@@ -47,8 +44,9 @@ class CameraFragment : Fragment() {
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                val imageBitmap = result.data?.extras?.get("data") as Bitmap
+                val imageBitmap = result.data?.extras?.get(DATA_STRING) as Bitmap
                 binding.mainImageview.setImageBitmap(imageBitmap)
+                binding.savePicButton.visibility = View.VISIBLE
             }
         }
 
@@ -80,13 +78,14 @@ class CameraFragment : Fragment() {
 
     private fun renderData(uri: Uri) {
         binding.mainImageview.setImageResource(R.drawable.ic_launcher_foreground)
-        Toast.makeText(context, "Picture has been saved to the gallery", Toast.LENGTH_SHORT).show()
+        binding.savePicButton.visibility = View.INVISIBLE
+        Toast.makeText(context, getString(R.string.on_picture_saved_message), Toast.LENGTH_SHORT).show()
         Timber.i("Timber talks: $uri saved successfully")
     }
 
     private fun onErrorOccurred(error: Throwable) {
         Timber.i("Timber talks: Oops! We-ve got some $error")
-        Toast.makeText(context, "Oops... Wrong type of file!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, getString(R.string.on_wrong_type_message), Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {
@@ -96,6 +95,8 @@ class CameraFragment : Fragment() {
 
     companion object Factory {
         private const val CAMERA_SCOPE = "camera_scope"
+        private const val CAMERA_SCOPE_ID = "cameraScopeId"
+        private const val DATA_STRING = "data"
 
         fun newInstance(): Fragment = CameraFragment()
     }

@@ -9,4 +9,6 @@ interface FileManagerInterface {
     fun convertAndSaveImageAsync(image: Bitmap): Deferred<File>
     fun filterImageFiles(): Array<out File>?
     fun deleteAllImageFiles(): Array<out File>?
+    fun deleteImageFile(name: String)
+    fun setImageName (pictureDate: String): String
 }

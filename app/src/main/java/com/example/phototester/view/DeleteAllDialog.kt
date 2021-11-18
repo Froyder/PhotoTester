@@ -6,18 +6,19 @@ import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
+import com.example.phototester.R
 
-class DeleteDialogFragment : DialogFragment() {
+class DeleteAllDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return requireContext().let {
             AlertDialog.Builder(it)
-                .setTitle("Warning!")
-                .setMessage("Do you really want to delete all photos?")
-                .setPositiveButton("Yes"){dialog, button ->
+                .setTitle(requireContext().resources.getString(R.string.warning))
+                .setMessage(requireContext().resources.getString(R.string.delete_all_pictures))
+                .setPositiveButton(requireContext().resources.getString(R.string.yes)){dialog, button ->
                     setFragmentResult(REQUEST_KEY, bundleOf(REQUEST to POSITIVE))
                 }
-                .setNegativeButton("No"){dialog, button ->
+                .setNegativeButton(requireContext().resources.getString(R.string.no)){dialog, button ->
                     dialog.dismiss()
                 }
                 .create()
@@ -29,6 +30,6 @@ class DeleteDialogFragment : DialogFragment() {
         private const val REQUEST = "request"
         private const val POSITIVE = "yes"
 
-        const val TAG = "DeleteDialogFragment"
+        const val TAG = "DeleteAllDialogFragment"
     }
 }
