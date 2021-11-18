@@ -3,7 +3,7 @@
         android:id="@+id/camera"
         android:enabled="true"
         android:icon="@drawable/bot_nav_camera_selector"
-        android:title="@string/take_picture"/>
+        android:title="@string/use_camera"/>
     <item
         android:id="@+id/gallery"
         android:enabled="true"

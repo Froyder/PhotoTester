@@ -3,6 +3,7 @@ package com.example.phototester.view
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
@@ -15,6 +16,7 @@ class DeleteAllDialog : DialogFragment() {
             AlertDialog.Builder(it)
                 .setTitle(requireContext().resources.getString(R.string.warning))
                 .setMessage(requireContext().resources.getString(R.string.delete_all_pictures))
+                .setIcon(ResourcesCompat.getDrawable(resources, R.drawable.ic_delete_all, null))
                 .setPositiveButton(requireContext().resources.getString(R.string.yes)){ _, _ ->
                     setFragmentResult(REQUEST_KEY, bundleOf(REQUEST to POSITIVE))
                 }

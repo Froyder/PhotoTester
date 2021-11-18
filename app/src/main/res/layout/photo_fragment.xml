@@ -28,6 +28,7 @@
             android:id="@+id/delete_photo_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_delete_pic"
             android:text="@string/delete_photo">
         </Button>
 

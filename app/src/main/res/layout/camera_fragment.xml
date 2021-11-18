@@ -26,6 +26,7 @@
         android:layout_margin="@dimen/margin_small"
         android:text="@string/take_picture"
         android:layout_weight="0.01"
+        android:drawableEnd="@drawable/ic_image_plug"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_imageview" />
@@ -39,6 +40,7 @@
         android:text="@string/save_picture"
         android:layout_weight="0.01"
         android:visibility="invisible"
+        android:drawableEnd="@drawable/ic_baseline_save_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/take_pic_button" />

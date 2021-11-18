@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">PhotoTester</string>
     <string name="take_picture">Take a picture</string>
-    <string name="visit_gallery">Visit gallery</string>
+    <string name="use_camera">Camera</string>
+    <string name="visit_gallery">Gallery</string>
     <string name="save_picture">Save this picture</string>
     <string name="file_name">File name</string>
     <string name="delete_all">Delete all pictures</string>
