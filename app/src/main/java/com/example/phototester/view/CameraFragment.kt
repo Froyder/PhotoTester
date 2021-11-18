@@ -77,14 +77,14 @@ class CameraFragment : Fragment() {
     }
 
     private fun renderData(uri: Uri) {
-        binding.mainImageview.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.mainImageview.setImageResource(R.drawable.ic_image_plug)
         binding.savePicButton.visibility = View.INVISIBLE
         Toast.makeText(context, getString(R.string.on_picture_saved_message), Toast.LENGTH_SHORT).show()
-        Timber.i("Timber talks: $uri saved successfully")
+        Timber.i(getString(R.string.timber_on_save_success) + uri)
     }
 
     private fun onErrorOccurred(error: Throwable) {
-        Timber.i("Timber talks: Oops! We-ve got some $error")
+        Timber.i(getString(R.string.timber_on_error_message) + error)
         Toast.makeText(context, getString(R.string.on_wrong_type_message), Toast.LENGTH_SHORT).show()
     }
 

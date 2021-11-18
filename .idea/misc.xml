@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/drawable/bot_nav_gallery_selector.xml" value="0.10625" />
+        <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/drawable/bot_nav_selector.xml" value="0.10625" />
+        <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/drawable/ic_image_plug.xml" value="0.2518518518518518" />
         <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21296296296296297" />
         <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/layout/activity_main.xml" value="0.144" />
         <entry key="..\:/CodingWithFun/Kotlin/PhotoTester/app/src/main/res/layout/camera_fragment.xml" value="0.2" />

@@ -15,10 +15,10 @@ class DeleteImageDialog : DialogFragment() {
             AlertDialog.Builder(it)
                 .setTitle(requireContext().resources.getString(R.string.warning))
                 .setMessage(requireContext().resources.getString(R.string.delete_picture))
-                .setPositiveButton(requireContext().resources.getString(R.string.yes)){dialog, button ->
+                .setPositiveButton(requireContext().resources.getString(R.string.yes)){ _, _ ->
                     setFragmentResult(REQUEST_KEY, bundleOf(REQUEST to POSITIVE))
                 }
-                .setNegativeButton(requireContext().resources.getString(R.string.no)){dialog, button ->
+                .setNegativeButton(requireContext().resources.getString(R.string.no)){ dialog, _ ->
                     dialog.dismiss()
                 }
                 .create()

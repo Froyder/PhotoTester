@@ -38,7 +38,6 @@ class FileManager(private val context: Context) : FileManagerInterface {
                 stream = FileOutputStream(newImage)
                 image.compress(Bitmap.CompressFormat.JPEG, 100, stream)
             }
-            Timber.i("Timber ${newImage.absolutePath}")
             newImage
         }
 

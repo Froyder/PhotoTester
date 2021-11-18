@@ -15,4 +15,7 @@
     <string name="file_filter_suffix">.jpg</string>
     <string name="on_picture_saved_message">Picture has been saved to the gallery</string>
     <string name="on_wrong_type_message">Oops... Wrong type of file!</string>
+    <string name="on_item_reselected">You are here already!</string>
+    <string name="timber_on_error_message">"Timber talks: Oops! We've got some "</string>
+    <string name="timber_on_save_success">"Timber talks: new file saved successfully at  "</string>
 </resources>

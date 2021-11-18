@@ -2,6 +2,7 @@ package com.example.phototester.view
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.phototester.R
 import com.example.phototester.databinding.ActivityMainBinding
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.bottom_navigation_menu, menu)
+        menu?.findItem(R.id.gallery)?.isVisible = false
+        menu?.findItem(R.id.camera)?.isVisible = false
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -44,5 +47,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.bottomNavigation.selectedItemId = R.id.camera
+
+        binding.bottomNavigation.setOnItemReselectedListener {
+            Toast.makeText(this, R.string.on_item_reselected, Toast.LENGTH_SHORT).show()
+        }
     }
 }
