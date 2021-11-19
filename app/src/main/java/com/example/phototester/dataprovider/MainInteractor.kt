@@ -18,4 +18,8 @@ class MainInteractor(private val fileManager: FileManagerInterface) : MainIntera
         return fileManager.filterImageFiles()
     }
 
+    override fun deletePhoto(name: String) {
+        fileManager.deleteImageFile(name)
+    }
+
 }

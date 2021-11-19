@@ -2,11 +2,11 @@
     <item
         android:id="@+id/camera"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_camera_24"
-        android:title="@string/take_picture"/>
+        android:icon="@drawable/bot_nav_camera_selector"
+        android:title="@string/use_camera"/>
     <item
         android:id="@+id/gallery"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_photo_library_24"
+        android:icon="@drawable/bot_nav_gallery_selector"
         android:title="@string/visit_gallery"/>
 </menu>

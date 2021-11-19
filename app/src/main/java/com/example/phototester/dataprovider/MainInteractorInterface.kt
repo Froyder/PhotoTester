@@ -9,4 +9,5 @@ interface MainInteractorInterface {
     suspend fun savePhoto(image: Bitmap): Uri
     fun deleteAllPhotos(): Array<out File>?
     fun filterPhotos(): Array<out File>?
+    fun deletePhoto(name: String)
 }

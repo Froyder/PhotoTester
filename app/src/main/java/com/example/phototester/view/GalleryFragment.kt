@@ -22,7 +22,7 @@ class GalleryFragment : Fragment() {
     private var adapter: GalleryAdapter? = null
 
     private val koinScope: Scope by lazy {
-        getKoin().getOrCreateScope("galleryScope", named(GALLERY_SCOPE))
+        getKoin().getOrCreateScope(GALLERY_SCOPE_ID, named(GALLERY_SCOPE))
     }
     private val viewModel: GalleryViewModel by koinScope.inject()
 
@@ -43,7 +43,7 @@ class GalleryFragment : Fragment() {
         viewModel.mutableLiveData.observe(viewLifecycleOwner) { setAdapter(it) }
 
         binding.deleteButton.setOnClickListener {
-            DeleteDialogFragment().show(parentFragmentManager, DeleteDialogFragment.TAG)
+            DeleteAllDialog().show(parentFragmentManager, DeleteAllDialog.TAG)
         }
 
         setFragmentResultListener(REQUEST_KEY) { _, bundle ->
@@ -61,12 +61,13 @@ class GalleryFragment : Fragment() {
                         R.id.container,
                         PhotoDetailsFragment.newInstance(file.absolutePath, file.name)
                     )
-                    .addToBackStack("")
+                    .addToBackStack(DEFAULT_FRAGMENT_ID)
                     .commit()
             }
         }
 
     private fun setAdapter(listOfFiles: Array<out File>) {
+        binding.deleteButton.isEnabled = listOfFiles.isNotEmpty()
         if (adapter == null) {
             binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
             binding.recyclerView.adapter = GalleryAdapter(onListClickListener, listOfFiles)
@@ -82,6 +83,8 @@ class GalleryFragment : Fragment() {
 
     companion object Factory {
         private const val GALLERY_SCOPE = "gallery_scope"
+        private const val GALLERY_SCOPE_ID = "galleryScopeId"
+        private const val DEFAULT_FRAGMENT_ID = ""
         private const val REQUEST_KEY = "request_key"
         private const val REQUEST = "request"
         private const val POSITIVE = "yes"
